@@ -1,0 +1,11 @@
+policies:
+  - name: check-running-instances
+    resource: ec2
+    filters:
+      - State.Name: running
+    actions:
+      - type: notify
+        to:
+          - hassan.amini25@yahoo.com
+        subject: Running EC2 Instances Report
+        template: default
